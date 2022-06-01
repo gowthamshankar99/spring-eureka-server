@@ -1,0 +1,18 @@
+server:
+  port: 8761   #Euraka server port default port (8761)
+  
+eureka:
+  instance:
+    hostname: eureka-server.default.gowthamshankar.net   
+    
+  client:
+    register-with-eureka: false   #This is Euraka Register itself. So, informing to the server to not register itself.
+    fetch-registry: false  
+    
+    #Euraka server URL for monitoring     
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka-server.default.gowthamshankar.net/eureka/
+
+
+#tanzu apps workload apply -f config/workload.yaml --local-path .
